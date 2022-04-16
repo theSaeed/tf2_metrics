@@ -1,4 +1,4 @@
-# TF Metrics
+# TF Metrics with Modifications for tf 2.0 compatibility
 
 [![Build Status](https://travis-ci.org/guillaumegenthial/tf_metrics.svg?branch=master)](https://travis-ci.org/guillaumegenthial/tf_metrics)
 
