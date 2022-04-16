@@ -137,7 +137,7 @@ def fbeta(labels, predictions, num_classes, pos_indices=None, weights=None,
 
 def safe_div(numerator, denominator):
     """Safe division, return 0 if denominator is 0"""
-    numerator, denominator = tf.compat.v1.to_float(numerator), tf.compat.v1.to_float(denominator)
+    numerator, denominator = tf.cast(numerator, tf.float32), tf.cast(denominator, tf.float32)
     zeros = tf.zeros_like(numerator, dtype=numerator.dtype)
     denominator_is_zero = tf.equal(denominator, zeros)
     return tf.where(denominator_is_zero, zeros, numerator / denominator)
@@ -196,7 +196,7 @@ def metrics_from_confusion_matrix(cm, pos_indices=None, average='micro',
             fbetas.append(fbeta)
             cm_mask = np.zeros([num_classes, num_classes])
             cm_mask[idx, :] = 1
-            n_golds.append(tf.compat.v1.to_float(tf.reduce_sum(cm * cm_mask)))
+            n_golds.append(tf.cast(tf.reduce_sum(cm * cm_mask), tf.float32))
 
         if average == 'macro':
             pr = tf.reduce_mean(precisions)
