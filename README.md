@@ -11,15 +11,7 @@ Multi-class metrics for Tensorflow, similar to scikit-learn multi-class metrics.
 To add `tf_metrics` to your current python environment, run
 
 ```
-pip install git+https://github.com/guillaumegenthial/tf_metrics.git
-```
-
-For a more advanced use (editable mode, for developers)
-
-```
-git clone https://github.com/guillaumegenthial/tf_metrics.git
-cd tf_metrics
-pip install -r requirements.txt
+pip install git+https://github.com/theSaeed/tf2_metrics.git
 ```
 
 ## Example
